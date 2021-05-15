@@ -23,7 +23,6 @@ The above command was for the VM called `VM1`. Do the same for `VM2`, changing V
 ```
 sudo apt update
 sudo apt -y upgrade
-# sudo apt -y install python-pip python-numpy python-scipy python-matplotlib
 sudo apt -y install python3-pip python3-matplotlib
 sudo pip install --upgrade Pillow scikit-image
 ```
