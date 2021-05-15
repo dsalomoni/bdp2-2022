@@ -17,6 +17,7 @@ Put the following at the end of the `.bashrc` file:
 `PS1="\[\033[01;32m\]\u@VM1\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "`
 
 The above command was for the VM called `VM1`. Do the same for `VM2`, changing VM1 to VM2 in the `PS1` string above.
+Once done, activate the new prompt either by logging out and then back in, or simply typing `source .bashrc`
 
 ### Installing additional packages on VM1
 
