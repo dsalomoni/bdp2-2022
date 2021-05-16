@@ -23,7 +23,7 @@ sudo mkdir /data
 Get the image files, decompressing them into the /data directory:
 
 ```
-wget https://tinyurl.com/at6tefkx -O - | sudo tar -zx -C /data
+wget https://tinyurl.com/4sdx42bz -O - | sudo tar -zx -C /data
 ```
 
 Change permissions to allows reading and writing from VM1:
