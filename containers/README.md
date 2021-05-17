@@ -20,4 +20,43 @@ To issue docker commands without `sudo`:
 sudo usermod -aG docker ${USER}
 ```
 
-Remember to log out and then log back in to apply this change. Once done, you should now be able to issue a docker command such as `docker info` without prefixing it with `sudo`.
+Remember to log out and then log back in to apply this change. Once done, you should be able to issue a docker command such as `docker info` without prefixing it with `sudo`.
+
+## Inspecting bridges
+
+Create a bridge and connect a container to that bridge:
+
+```
+docker network create my-bridge
+docker run --rm -it --network=my-bridge --name=test1 alpine sh
+```
+Show the configuration of a bridge:
+
+```
+docker network inspect <bridge>
+```
+
+Parse the output of this command to print the containers connected to a certain bridge:
+
+```
+docker network inspect my-bridge | python3 -c "import sys, json; print([v['Name'] for k,v in json.load(sys.stdin)[0]['Containers'].items()])"
+```
+
+## What is my IP address?
+
+Check the real IP address of `test1`, connected to the `my-bridge` bridge:
+
+```
+# this is to be done on test1
+apk update && apk add bind-tools
+dig +short myip.opendns.com @resolver1.opendns.com
+```
+
+## Install portainer
+
+```
+docker volume create portainer_data
+docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+```
+
+Remember to change the VM1 security group appropriately or you won't be able to connect to portainer.
