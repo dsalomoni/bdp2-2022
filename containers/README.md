@@ -5,6 +5,12 @@ For details, see the course slides.
 
 For more information on the course, see <a href=https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2020/435337>here</a>.
 
+## Create a directory for this module and go there
+```
+mkdir ~/containers
+cd ~/containers
+```
+
 ## Install docker
 
 On both VM1 and VM2:
@@ -60,3 +66,11 @@ docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.
 ```
 
 Remember to change the VM1 security group appropriately or you won't be able to connect to portainer.
+
+## Create a local repo
+
+```
+mkdir -p ~/containers/myweb
+cd ~/containers/myweb
+git init
+```
