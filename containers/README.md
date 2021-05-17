@@ -51,7 +51,6 @@ docker network inspect my-bridge | python3 -c "import sys, json; print([v['Name'
 ## What is my IP address?
 
 Check the real IP address of `test1`, connected to the `my-bridge` bridge:
-
 ```
 # this is to be done on test1
 apk update && apk add bind-tools
@@ -73,4 +72,23 @@ Remember to change the VM1 security group appropriately or you won't be able to 
 mkdir -p ~/containers/myweb
 cd ~/containers/myweb
 git init
+```
+
+## Pushing a new repo to GitHub
+
+Tell git the location of the remote repository (it must be already created on GitHub) and push your changes to GitHub. You will be asked your GitHub username and password.
+```
+git remote add origin https://github.com/dsalomoni/bdp2-test.git
+git push -u origin master
+```
+
+If you then want to retrieve the latest published version of the files on the repo, use the `pull` command:
+```
+git pull origin master
+```
+
+## Cloning a repo
+The command is `git clone`. Try it on VM2.
+```
+git clone https://github.com/dsalomoni/bdp2-test.git
 ```
