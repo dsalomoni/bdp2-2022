@@ -5,7 +5,7 @@ For details, see the course slides.
 
 For more information on the course, see <a href=https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2020/435337>here</a>.
 
-## git commands
+## git commands
 
 Add files to git:
 ```
