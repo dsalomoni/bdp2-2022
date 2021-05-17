@@ -24,12 +24,12 @@ git commit -m "First commit of my web server"
 
 Edit your Dockerfile to support non-interactive tzdata (add the line `ENV DEBIAN_FRONTEND=noninteractive`) and then add and commit the changed file:
 ```
-git commit -a -m "Fix for non interactive tzdata"
+git commit -a -m "Fix for non interactive tzdata"
 ```
 
 You can now succesfully build and run your web server with 
 ```
-docker build -t web_server .
+docker build -t web_server .
 docker run -d -p 8080:80 web_server
 ```
 
@@ -42,5 +42,5 @@ git log -p
 git checkout <hash> -- index.html
 
 # revert all files to a given commit (careful!)
-git reset --hard <hash>
+git reset --hard <hash>
 ```
