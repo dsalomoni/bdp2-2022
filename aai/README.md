@@ -20,3 +20,16 @@ http://<VM1_public_IP_address>:8080/redirect_uri
 
 ## Building and running the OIDC-enabled container
 
+Edit the file `default.conf` as specified in the slides and build the container image with
+
+```
+docker build -t web_server_oidc .
+```
+
+Once the build is successful (check that your image has been built with `docker images`) run the container with
+
+```
+docker run -d -p 8080:80 web_server_oidc
+```
+
+If you now open the URL `http://<VM1_public_IP_address>:8080` you should be redirected to the IAM server; log in there, and you should then be automatically redirected to a page on the web server running on VM1.
