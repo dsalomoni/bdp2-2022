@@ -17,3 +17,6 @@ Follow the slides for details on which IAM server to use and how to authenticate
 ```
 http://<VM1_public_IP_address>:8080/redirect_uri
 ```
+
+## Building and running the OIDC-enabled container
+
