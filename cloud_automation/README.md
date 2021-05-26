@@ -11,3 +11,19 @@ For more information on the course, see <a href=https://www.unibo.it/it/didattic
 mkdir -p ~/cloud_automation
 cd ~/cloud_automation
 ```
+
+## Install go and Kind
+
+Kind requires the Go language to work, so we will first install Go:
+
+```
+sudo apt update && sudo apt -y upgrade
+sudo apt install golang-go
+```
+
+Install Kind:
+
+```
+go get sigs.k8s.io/kind
+sudo ln -s $(go env GOPATH)/bin/kind /usr/local/bin/kind
+```
