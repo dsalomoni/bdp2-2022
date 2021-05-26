@@ -7,7 +7,7 @@ For more information on the course, see <a href=https://www.unibo.it/it/didattic
 
 ## Create a directory for this module and go there
 ```
-mkdir ~/aai
+mkdir -p ~/aai
 cd ~/aai
 ```
 ## Self-register your application to IAM

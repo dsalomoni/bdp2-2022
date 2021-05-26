@@ -7,7 +7,7 @@ For more information on the course, see <a href=https://www.unibo.it/it/didattic
 
 ## Create a directory for this module and go there
 ```
-mkdir ~/cloud_storage
+mkdir -p ~/cloud_storage
 cd ~/cloud_storage
 ```
 
