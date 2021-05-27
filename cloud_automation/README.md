@@ -32,9 +32,7 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/
 ```
 
-## Create kind clusters
-
-### Basic creation of a Kubernetes cluster
+## Creation of a one-node Kubernetes cluster
 
 ```
 kind create cluster
@@ -56,7 +54,7 @@ kubectl get pods
 
 Can you make out what type of output each command returns, and how they relate to each other?
 
-### Destroy the Kubernetes cluster
+## Destroy the Kubernetes cluster
 
 ```
 kind delete cluster
@@ -70,7 +68,7 @@ kind get clusters
 kubectl cluster-info
 ```
 
-### Create a Kubernetes with one control node and two workers
+## Creation of a Kubernetes with one control node and two workers
 
 Copy the `kind-config.yaml` file taken from this repositrory and create the cluster with
 
@@ -91,3 +89,16 @@ kubectl get pods
 ```
 
 You should now have your Kubernetes cluster running. Notice that you still have no running pods in the cluster.
+
+## Creation of the nginx pod(s)
+
+### Single pod
+
+```
+kubectl create -f nginx-pod.yaml
+```
+
+Check the status of the cluster before and after the command above with `kubectl get all -o wide`
+
+You can delete the pod with `kubectl delete pod nginx`
+
