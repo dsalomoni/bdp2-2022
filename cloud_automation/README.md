@@ -16,15 +16,6 @@ cd ~/cloud_automation
 
 ## Install Kind
 
-First update the current packages:
-
-```
-sudo apt update && sudo apt -y upgrade
-sudo apt -y install golang-go
-```
-
-Install Kind:
-
 ```
 curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.0/kind-linux-amd64
 chmod +x ./kind
