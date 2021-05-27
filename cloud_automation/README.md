@@ -18,7 +18,7 @@ Kind requires the Go language to work, so we will first install Go:
 
 ```
 sudo apt update && sudo apt -y upgrade
-sudo apt install golang-go
+sudo apt -y install golang-go
 ```
 
 Install Kind:
