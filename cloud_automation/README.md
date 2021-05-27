@@ -5,9 +5,9 @@ For details, see the course slides.
 
 For more information on the course, see <a href=https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2020/435337>here</a>.
 
-## Create a directory for this module and go there
+Note: all commands below should be performed on VM1.
 
-Do all of this of VM1.
+## Create a directory for this module and go there
 
 ```
 mkdir -p ~/cloud_automation
@@ -70,7 +70,7 @@ kubectl cluster-info
 
 ## Creation of a Kubernetes with one control node and two workers
 
-Copy the `kind-config.yaml` file taken from this repositrory and create the cluster with
+Copy the `kind-config.yaml` file taken from this repository and create the cluster with
 
 ```
 kind create cluster --config kind-config.yaml
@@ -102,3 +102,18 @@ Check the status of the cluster before and after the command above with `kubectl
 
 You can delete the pod with `kubectl delete pod nginx`
 
+### Create a replica set
+
+Now open a separate terminal window on VM1 and issue the command `watch kubectl get all -o wide`. This will periodically check the status of our Kubernetes cluster. 
+
+Create a "replica set" now with
+
+```
+kubectl create -f nginx-replicas.yaml
+```
+
+and observe what happens to the cluster. 
+
+Now delete one of the pods with `kubectl delete pod nginx-replicaset-xxxxx` (replace xxxxx with the appropriate string for one of your pods). What happens?
+
+Delete the replica set with `kubectl delete replicaset nginx-replicaset`. Observe the status of the cluster.
