@@ -12,9 +12,9 @@ mkdir -p ~/cloud_automation
 cd ~/cloud_automation
 ```
 
-## Install go and Kind
+## Install Kind
 
-Kind requires the Go language to work, so we will first install Go:
+First update current packages:
 
 ```
 sudo apt update && sudo apt -y upgrade
@@ -24,6 +24,7 @@ sudo apt -y install golang-go
 Install Kind:
 
 ```
-go get sigs.k8s.io/kind
-sudo ln -s $(go env GOPATH)/bin/kind /usr/local/bin/kind
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.0/kind-linux-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin
 ```
