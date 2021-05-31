@@ -158,7 +158,7 @@ The username is `admin`. The password can be found typing the command `sudo cat 
 
 ### Hello World
 
-Fetch latest available list of templates with `faas-cli template pull`; check what they are with `faas-cli new --list`. 
+Fetch the latest available list of templates with `faas-cli template pull`; check what they are with `faas-cli new --list`. 
 
 ```
 mkdir -p ~/cloud_automation/hello
@@ -175,7 +175,7 @@ faas-cli new --lang python3 count-base --prefix="<your_dockerhub_username>"
 
 Get the `handler.py` function from this repository and put it in the `count-base` directory. 
 
-Edit `requirements.py` adding a line with the text `requests`, to specify that the `requests` module in needed by our function.
+Edit `requirements.py` adding a line with the text `requests`, to specify that the `requests` module is needed by our function.
 
 Finally, build and deploy the function:
 
