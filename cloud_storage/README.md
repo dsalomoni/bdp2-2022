@@ -47,7 +47,7 @@ sudo apt install -y nfs-kernel-server
 Put the following line at the end of the `/etc/exports` file to export the /data directory to VM1 only:
 
 ```
-/data   <private VM1 address>(rw,sync,no_subtree_check)
+/data   <private_VM1_address>(rw,sync,no_subtree_check)
 ```
 
 ### Export the shared directory
@@ -70,4 +70,27 @@ sudo apt update && sudo apt -y upgrade
 sudo apt -y install nfs-common
 sudo mkdir /remote_data
 sudo mount <private VM2 address>:/data /remote_data/
+```
+
+Check that everything is fine with
+
+```
+df -h
+ls /remote_data
+```
+
+## Process the images
+
+### Images via NFS
+
+Write on VM1 a program called `multiple_images.py` to process the images made available via NFS. Measure the time it takes to process the images.
+
+### Images locally
+
+Copy the images _locally on VM1_ and __modify the `multiple_images.py` program you just wrote__ to process the images from a local directory, rather than from a NFS-exported directory. Measure the time it takes in this case. 
+
+To copy the images to a VM1 local directory:
+```
+mkdir -p ~/cloud_storage/local_data
+wget https://tinyurl.com/4sdx42bz -O - | tar -zx -C ~/cloud_storage/local_data
 ```
