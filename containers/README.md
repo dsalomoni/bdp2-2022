@@ -66,6 +66,24 @@ docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.
 
 Remember to change the VM1 security group appropriately or you won't be able to connect to portainer.
 
+## Run mypi.py in a container
+
+Create an alpine container, connect to it and run `mypi.py`:
+
+```
+docker run --rm -it --name=test1 alpine sh
+# install python3 in the container
+apk update && apk add python3 
+
+# write mypi.py in the container
+# copy it from this repo
+
+# run mypi.py in the container
+python3 mypi.py #
+```
+
+Check what's going on in another terminal window on VM1 with `docker top test1`, with `docker stats test1`, as well as with portainer.
+
 ## Create a local repo
 
 ```
