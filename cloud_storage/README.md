@@ -19,7 +19,7 @@ cd ~/cloud_storage
 ```
 wget https://github.com/dsalomoni/bdp2-2021/raw/main/cloud_storage/taipei.jpg
 wget https://github.com/dsalomoni/bdp2-2021/raw/main/cloud_storage/one_image.py
-scp -i ~/.ssh/bdp2-2020.pem ubuntu@ec2-3-84-187-177.compute-1.amazonaws.com:/home/ubuntu/cloud_storage/taipei_bw.pdf .
+scp -i ~/.ssh/bdp2-2021.pem ubuntu@ec2-3-84-187-177.compute-1.amazonaws.com:/home/ubuntu/cloud_storage/taipei_bw.pdf .
 ```
 Warning: __change the name and location of the PEM file as well as the name of the VM1 machine__ adapting it to your own environemnt.
 
