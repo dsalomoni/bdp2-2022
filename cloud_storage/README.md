@@ -14,7 +14,7 @@ cd ~/cloud_storage
 ## Installation of the words list
 `sudo apt install -y wamerican`
 
-## Examples of `wget` commands
+## Examples of `wget` and `scp` commands
 
 ```
 wget https://github.com/dsalomoni/bdp2-2021/raw/main/cloud_storage/taipei.jpg
