@@ -98,6 +98,8 @@ sudo apt update && sudo apt install -y git
 ```
 mkdir -p ~/containers/myweb
 cd ~/containers/myweb
+git config --global user.name "<your name>"
+git config --global user.email "<your email>"
 git init
 ```
 
