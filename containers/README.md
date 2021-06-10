@@ -66,7 +66,7 @@ docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.
 
 Remember to change the VM1 security group appropriately or you won't be able to connect to portainer.
 
-__Note that the unibo wireless network may block outgoing traffic to port 9000__. In this case, you would not be able to open the Portainer web change. Possible workarounds: change the port exposed by VM1 to port 80 with the `-p` flag above, or connect to the internet through another wireless network.
+__Note that the unibo wireless network may block outgoing traffic to port 9000__. In this case, you would not be able to open the Portainer web page. Possible workarounds: change the port exposed by VM1 to port 80 with the `-p` flag above, or connect to the Internet through another network.
 
 ## Run mypi.py in a container
 
