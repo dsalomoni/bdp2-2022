@@ -66,6 +66,8 @@ docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.
 
 Remember to change the VM1 security group appropriately or you won't be able to connect to portainer.
 
+__Note that the unibo wireless network may block outgoing traffic to port 9000__. In this case, you would not be able to open the Portainer web change. Possible workarounds: change the port exposed by VM1 to port 80 with the `-p` flag above, or connect to the internet through another wireless network.
+
 ## Run mypi.py in a container
 
 Create an alpine container, connect to it and run `mypi.py`:
@@ -83,6 +85,13 @@ python3 mypi.py #
 ```
 
 Check what's going on in another terminal window on VM1 with `docker top test1`, with `docker stats test1`, as well as with portainer.
+
+## Install `git` on VM1
+
+```
+sudo apt update && sudo apt install -y git
+```
+
 
 ## Create a local repo
 
