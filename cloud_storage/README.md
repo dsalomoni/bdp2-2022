@@ -1,18 +1,20 @@
 # bdp2-2021
-This repository contains files used in the course <b>Infrastructures for Big Data Processing</b> (BDP2) at the University of Bologna, Academic Year 2020-2021, taught by prof. Davide Salomoni.
+This repository contains files used in the course <b>Infrastructures for Big Data Processing</b> (BDP2) at the University of Bologna, Academic Year 2021-2022, taught by prof. Davide Salomoni.
 
 For details, see the course slides.
 
-For more information on the course, see <a href=https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2020/435337>here</a>.
+For more information on the course, see <a href=https://www.unibo.it/en/teaching/course-unit-catalogue/course-unit/2021/435337>here</a>.
 
-## Create a directory for this module and go there
+## Create a directory for this module on VM1 and go there
 ```
 mkdir -p ~/cloud_storage
 cd ~/cloud_storage
 ```
 
 ## Installation of the words list
-`sudo apt install -y wamerican`
+```
+sudo apt install -y wamerican
+```
 
 ## Examples of `wget` and `scp` commands
 
