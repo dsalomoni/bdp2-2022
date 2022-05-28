@@ -1,4 +1,4 @@
-# bdp2-2022
+# bdp2-2022 - Introduction
 This repository contains files used in the course <b>Infrastructures for Big Data Processing</b> (BDP2) at the University of Bologna, Academic Year 2021-2022, taught by prof. Davide Salomoni.
 
 For details, see the course slides.
