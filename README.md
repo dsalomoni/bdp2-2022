@@ -5,16 +5,38 @@ For details, see the course slides.
 
 For more information on the course, see <a href=https://www.unibo.it/en/teaching/course-unit-catalogue/course-unit/2021/435337>here</a>.
 
+## Accessing the AWS Lab
+
+Follow the instructions provided during the course to get an account and set up your Lab environment. Remember that, once you have set up your account, you should go to <a href=https://www.awsacademy.com/LMS_Login>https://www.awsacademy.com/LMS_Login</a> to log in to your AWS Lab. Select "Student Login" there.
+
 ## Configuration of the 2 VMs on AWS
 
+### VM characteristics
+
+- Ubuntu Server 20.04 LTS, 64-bit (x86)
+- Size: t2.medium
+- Subnet: default in us-east-1c
+- Storage: 32 GB volume (**not** the default 8 GB size)
+- Security group: rename it and call it "BDP2-Sec"
+
+Remember to generate a new key pair. Call it e.g. `bdp2`. The private key, called in this case `bdp2.pem`, should be downloaded to your laptop and its access protected from the terminal with the command 
+
+```
+chmod 400 bdp2.pem
+```
+
 ### Software update
-`sudo apt update && sudo apt -y upgrade`
+```
+sudo apt update && sudo apt -y upgrade
+```
 
 ### Changing the Linux prompt
 
 Put the following at the end of the `.bashrc` file:
 
-`PS1="\[\033[01;32m\]\u@VM1\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "`
+```
+PS1="\[\033[01;32m\]\u@VM1\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+```
 
 The above command was for the VM called `VM1`. Do the same for `VM2`, changing VM1 to VM2 in the `PS1` string above.
 
