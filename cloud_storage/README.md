@@ -9,21 +9,24 @@ For more information on the course, see <a href=https://www.unibo.it/en/teaching
 ```
 mkdir -p ~/cloud_storage
 cd ~/cloud_storage
+
 ```
 
 ## Installation of the words list
 ```
 sudo apt install -y wamerican
+
 ```
 
 ## Examples of `wget` and `scp` commands
 
+(change them according to your own set up!)
 ```
-wget https://github.com/dsalomoni/bdp2-2021/raw/main/cloud_storage/taipei.jpg
-wget https://github.com/dsalomoni/bdp2-2021/raw/main/cloud_storage/one_image.py
+wget https://github.com/dsalomoni/bdp2-2022/raw/main/cloud_storage/taipei.jpg
+wget https://github.com/dsalomoni/bdp2-2022/raw/main/cloud_storage/one_image.py
 scp -i ~/.ssh/bdp2-2021.pem ubuntu@ec2-3-84-187-177.compute-1.amazonaws.com:/home/ubuntu/cloud_storage/taipei_bw.pdf .
 ```
-Warning: __change the name and location of the PEM file as well as the name of the VM1 machine__ adapting it to your own environemnt.
+__Change the name and location of the PEM file as well as the name of the VM1 machine__ adapting it to your own environemnt.
 
 ## Installation of an NFS server on VM2
 
@@ -33,12 +36,14 @@ On VM2, create the directory to host the files:
 
 ```
 sudo mkdir /data
+
 ```
 
 Get the image files, decompressing them into the /data directory:
 
 ```
 wget https://tinyurl.com/4sdx42bz -O - | sudo tar -zx -C /data
+
 ```
 
 Change permissions to allows reading and writing from VM1:
@@ -54,6 +59,7 @@ sudo chmod -R 777 /data
 ```
 sudo apt update && sudo apt -y upgrade
 sudo apt install -y nfs-kernel-server
+
 ```
 
 Put the following line at the end of the `/etc/exports` file to export the /data directory to VM1 only:
@@ -67,6 +73,7 @@ Put the following line at the end of the `/etc/exports` file to export the /data
 ```
 sudo exportfs -a
 sudo systemctl restart nfs-kernel-server
+
 ```
 
 ## Modify the security group on VM2
@@ -82,6 +89,7 @@ sudo apt update && sudo apt -y upgrade
 sudo apt -y install nfs-common
 sudo mkdir /remote_data
 sudo mount <private VM2 address>:/data /remote_data/
+
 ```
 
 Check that everything is fine with
@@ -89,6 +97,7 @@ Check that everything is fine with
 ```
 df -h
 ls /remote_data
+
 ```
 
 ## Process the images
@@ -105,4 +114,5 @@ To copy the images to a VM1 local directory:
 ```
 mkdir -p ~/cloud_storage/local_data
 wget https://tinyurl.com/4sdx42bz -O - | tar -zx -C ~/cloud_storage/local_data
+
 ```

@@ -23,11 +23,13 @@ Remember to generate a new key pair. Call it e.g. `bdp2`. The private key, calle
 
 ```
 chmod 400 bdp2.pem
+
 ```
 
 ### Software update
 ```
 sudo apt update && sudo apt -y upgrade
+
 ```
 
 ### Changing the Linux prompt
@@ -49,4 +51,5 @@ sudo apt update
 sudo apt -y upgrade
 sudo apt -y install python3-pip python3-matplotlib
 sudo pip install --upgrade numpy Pillow scikit-image
+
 ```
