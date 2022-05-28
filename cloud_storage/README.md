@@ -84,12 +84,17 @@ Click on Save rules and verify that the VM2 security group now allows NFS inboun
 
 ## Mount the NFS directory on VM1
 
+First insgtall the NFS client package:
 ```
 sudo apt update && sudo apt -y upgrade
 sudo apt -y install nfs-common
 sudo mkdir /remote_data
-sudo mount <private VM2 address>:/data /remote_data/
 
+```
+
+Then mount the remote data directory from VM2:
+```
+sudo mount <private VM2 address>:/data /remote_data/
 ```
 
 Check that everything is fine with
