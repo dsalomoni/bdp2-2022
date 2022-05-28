@@ -46,6 +46,7 @@ Change permissions to allows reading and writing from VM1:
 ```
 sudo chown -R nobody:nogroup /data
 sudo chmod -R 777 /data
+
 ```
 
 ### NFS server installation on VM2

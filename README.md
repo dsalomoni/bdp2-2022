@@ -48,5 +48,5 @@ Once done, activate the new prompt either by logging out and then back in, or si
 sudo apt update
 sudo apt -y upgrade
 sudo apt -y install python3-pip python3-matplotlib
-sudo pip install --upgrade Pillow scikit-image
+sudo pip install --upgrade numpy Pillow scikit-image
 ```
