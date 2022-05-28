@@ -84,7 +84,7 @@ Click on Save rules and verify that the VM2 security group now allows NFS inboun
 
 ## Mount the NFS directory on VM1
 
-First insgtall the NFS client package:
+First install the NFS client package:
 ```
 sudo apt update && sudo apt -y upgrade
 sudo apt -y install nfs-common
