@@ -1,29 +1,32 @@
-# bdp2-2021
+# bdp2-2022 - Advanced Containers
 This repository contains files used in the course <b>Infrastructures for Big Data Processing</b> (BDP2) at the University of Bologna, Academic Year 2020-2021, taught by prof. Davide Salomoni.
 
 For details, see the course slides.
 
-For more information on the course, see <a href=https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2020/435337>here</a>.
+For more information on the course, see <a href=https://www.unibo.it/en/teaching/course-unit-catalogue/course-unit/2021/435337>here</a>.
 
 ## Create a directory for this module and go there
 ```
 mkdir -p ~/containers
 cd ~/containers
+
 ```
 
 ## Install docker
 
-On both VM1 and VM2:
+On both VM1 and VM2 run the following commands:
 
 ```
-sudo apt update && sudo apt -y upgrade
-sudo apt install -y docker.io
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
 ```
 
 To issue docker commands without `sudo`:
 
 ```
 sudo usermod -aG docker ${USER}
+
 ```
 
 Remember to log out and then log back in to apply this change. Once done, you should be able to issue a docker command such as `docker info` without prefixing it with `sudo`.
@@ -35,6 +38,7 @@ Create a bridge and connect a container to that bridge:
 ```
 docker network create my-bridge
 docker run --rm -it --network=my-bridge --name=test1 alpine sh
+
 ```
 Show the configuration of a bridge:
 
@@ -46,6 +50,7 @@ Parse the output of this command to print the containers connected to a certain 
 
 ```
 docker network inspect my-bridge | python3 -c "import sys, json; print([v['Name'] for k,v in json.load(sys.stdin)[0]['Containers'].items()])"
+
 ```
 
 ## What is my IP address?
@@ -55,18 +60,18 @@ Check the real IP address of `test1`, connected to the `my-bridge` bridge:
 # this is to be done on test1
 apk update && apk add bind-tools
 dig +short myip.opendns.com @resolver1.opendns.com
+
 ```
 
 ## Install portainer
 
 ```
 docker volume create portainer_data
-docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+docker run -d -p 8000:8000 -p 443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
 ```
 
-Remember to change the VM1 security group appropriately or you won't be able to connect to portainer.
-
-__Note that the unibo wireless network may block outgoing traffic to port 9000__. In this case, you would not be able to open the Portainer web page. Possible workarounds: change the port exposed by VM1 to port 80 with the `-p` flag above, or connect to the Internet through another network.
+Remember to change the VM1 security group appropriately or you won't be able to connect to the portainer container. Make sure that as _source_ IP address you put that of your own laptop.
 
 ## Run mypi.py in a container
 
