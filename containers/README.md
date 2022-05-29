@@ -1,5 +1,5 @@
 # bdp2-2022 - Advanced Containers
-This repository contains files used in the course <b>Infrastructures for Big Data Processing</b> (BDP2) at the University of Bologna, Academic Year 2020-2021, taught by prof. Davide Salomoni.
+This repository contains files used in the course <b>Infrastructures for Big Data Processing</b> (BDP2) at the University of Bologna, Academic Year 2021-2022, taught by prof. Davide Salomoni.
 
 For details, see the course slides.
 
@@ -95,17 +95,23 @@ Check what's going on in another terminal window on VM1 with `docker top test1`,
 
 ```
 sudo apt update && sudo apt install -y git
+
 ```
 
+## Configure `git`
+
+```
+git config --global user.name "<your name>"
+git config --global user.email "<your email>"
+```
 
 ## Create a local repo
 
 ```
 mkdir -p ~/containers/myweb
 cd ~/containers/myweb
-git config --global user.name "<your name>"
-git config --global user.email "<your email>"
 git init
+
 ```
 
 ## Pushing a new repo to GitHub

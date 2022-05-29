@@ -1,6 +1,7 @@
 FROM ubuntu
 RUN apt update
 RUN apt install -y apache2
-COPY index.html /var/www/html/
+# note that the next line has a mistake
+COPY index.html /vvar/www/html/
 EXPOSE 80
 CMD ["apachectl", "-D", "FOREGROUND"]
