@@ -1,9 +1,9 @@
-# bdp2-2021
-This repository contains files used in the course <b>Infrastructures for Big Data Processing</b> (BDP2) at the University of Bologna, Academic Year 2020-2021, taught by prof. Davide Salomoni.
+# bdp2-2022 - Cloud Automation
+This repository contains files used in the course <b>Infrastructures for Big Data Processing</b> (BDP2) at the University of Bologna, Academic Year 2021-2022, taught by prof. Davide Salomoni.
 
 For details, see the course slides.
 
-For more information on the course, see <a href=https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2020/435337>here</a>.
+For more information on the course, see <a href=https://www.unibo.it/en/teaching/course-unit-catalogue/course-unit/2021/435337>here</a>.
 
 Note: all the commands below should be performed on VM1.
 
@@ -12,6 +12,7 @@ Note: all the commands below should be performed on VM1.
 ```
 mkdir -p ~/cloud_automation
 cd ~/cloud_automation
+
 ```
 
 ## Install kubectl
@@ -22,6 +23,7 @@ cd ~/cloud_automation
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/
+
 ```
 
 ## Install minikube
@@ -30,12 +32,13 @@ sudo mv ./kubectl /usr/local/bin/
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 chmod +x ./minikube-linux-amd64
 sudo mv ./minikube-linux-amd64 /usr/local/bin/minikube
+
 ```
 
 Before moving on, check that both kubectl and minikube work with the commands
 
 ```
-kubectl version --client
+kubectl version --output=json
 minikube version
 ```
 
@@ -81,6 +84,7 @@ Check again what happened with the following commands:
 
 ```
 docker ps
+docker ps --format "table {{.ID}} | {{.Names}}"
 kubectl cluster-info
 kubectl get nodes -o wide
 kubectl get pods
