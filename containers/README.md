@@ -71,11 +71,11 @@ docker run -d -p 8000:8000 -p 443:9443 --name=portainer --restart=always -v /var
 
 ```
 
-Remember to change the VM1 security group appropriately or you won't be able to connect to the portainer container. Make sure that as _source_ IP address you put that of your own laptop.
+Remember to change the VM1 security group appropriately or you won't be able to connect to the portainer container. Make sure that as _source_ IP address you put that of your own laptop. Do __not__ open the security group for port 443 to the world.
 
 ## Run mypi.py in a container
 
-Create an alpine container, connect to it and run `mypi.py`:
+Create an alpine container, connect to it and run `mypi.py` inside the container:
 
 ```
 docker run --rm -it --name=test1 alpine sh
@@ -90,6 +90,14 @@ python3 mypi.py #
 ```
 
 Check what's going on in another terminal window on VM1 with `docker top test1`, with `docker stats test1`, as well as with portainer.
+
+## Run an infinite task in a detached container (detached = running in the background)
+
+```
+docker run --rm -d --name test1 alpine /bin/sh -c "while true; do $(echo date); sleep 1; done"
+
+```
+While the container is running, check its logs with `docker logs --follow test1`. Remember to stop the container when you are done with these checks, with `docker stop test1`.
 
 ## Install `git` on VM1
 
@@ -116,7 +124,8 @@ git init
 
 ## Pushing a new repo to GitHub
 
-Tell git the location of the remote repository (it must be already created on GitHub) and push your changes to GitHub. You will be asked your GitHub username and password.
+Tell git the location of the remote repository (it must be already created on GitHub) and push your changes to GitHub. You will be asked your GitHub username and password. Remember that as password you need to put a GitHub Personal Access Token.
+
 ```
 git remote add origin https://github.com/dsalomoni/bdp2-test.git
 git push -u origin master
