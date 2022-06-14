@@ -138,15 +138,20 @@ Focus on the difference between what was described in class:
 
 ## Install OpenFaaS
 
-On VM1:
+First **create a new VM, using the provided information, calling it VM3**. Then, on VM3:
 
 ```
 git clone https://github.com/openfaas/faasd --depth=1
 cd faasd
 ./hack/install.sh
+
 ```
 
-Open port 8080 in the AWS security group for VM1 and you should be able to see the OpenFaaS web page pointing your browser to http://_<VM1_public_IP>_:8080
+Open port 8080 in the AWS security group for VM3 (remember: **for your laptop only!**) and you should be able to see the OpenFaaS web page pointing your browser to http://_<VM3_public_IP>_:8080.
+
+However, if your network blocks access to port 8080, you may issue this command on VM3:
+
+s
 
 ### Log in from the terminal
 
