@@ -180,6 +180,7 @@ Fetch the latest available list of templates with `faas-cli template pull`; chec
 ```
 mkdir -p ~/cloud_automation/hello
 cd ~/cloud_automation/hello
+faas-cli new --lang python3 hello-python --prefix="<your_dockerhub_username>"
 ```
 
 ### A DNA base counter
