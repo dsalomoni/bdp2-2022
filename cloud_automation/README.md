@@ -5,7 +5,7 @@ For details, see the course slides.
 
 For more information on the course, see <a href=https://www.unibo.it/en/teaching/course-unit-catalogue/course-unit/2021/435337>here</a>.
 
-Note: all the commands below should be performed on VM1.
+Note: unless specified otherwise, all the commands below should be performed on VM1.
 
 ## Create a directory for this module and go there
 
