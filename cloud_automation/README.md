@@ -151,7 +151,9 @@ Open port 8080 in the AWS security group for VM3 (remember: **for your laptop on
 
 However, if your network blocks access to port 8080, you may issue this command on VM3:
 
-s
+```
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to 8080
+```
 
 ### Log in from the terminal
 
