@@ -165,6 +165,12 @@ The username is `admin`. The password can be found typing the command `sudo cat 
 
 ## Writing serverless functions
 
+### Install the OpenFaas CLI on VM1
+
+```
+curl -sSL https://cli.openfaas.com | sudo -E sh
+```
+
 ### Hello World
 
 Fetch the latest available list of templates with `faas-cli template pull`; check what they are with `faas-cli new --list`. 
