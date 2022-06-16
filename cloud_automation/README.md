@@ -196,6 +196,6 @@ faas-cli deploy -f ./count-base.yml
 
 Or, with a single command, `faas-cli up -f count-base.yml`.
 
-Try it out from the OpenFaas web interface passing for instance a string such as `AAACC` or a url with some real DNA, such as http://hplgit.github.io/bioinf-py/data/yeast_chr1.txt. 
+Try it out from the OpenFaas web interface passing for instance a string such as `AAACC` or a url with some real DNA, such as https://github.com/dsalomoni/bdp2-2022/raw/main/cloud_automation/yeast.txt. 
 
 Finally, try to call the `count-base` function from a remote location (for example, your laptop) either via Python or directly via `curl`, targeting the endpoint `http://<VM1_public_ip>:8080/function/count-base`.
